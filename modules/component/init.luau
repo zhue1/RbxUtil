@@ -540,8 +540,13 @@ end
 	```
 ]=]
 function Component:GetAll()
-	return self[KEY_COMPONENTS]
+    local copy = {}
+    for i, v in ipairs(self[KEY_COMPONENTS]) do
+        copy[i] = v
+    end
+    return copy
 end
+
 
 --[=[
 	@tag Component Class
